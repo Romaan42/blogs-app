@@ -3,7 +3,7 @@ import React from 'react'
 const page = async ({ params }) => {
     const { id } = await params;
 
-    const res = fetch(`http://localhost:3000/api/get-post/${id}`, { cache: 'no-store' });
+    const res = fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-post/${id}`, { cache: 'no-store' });
     const data = await (await res).json();
     const blog = data.posts;
 
