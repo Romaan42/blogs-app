@@ -4,7 +4,7 @@ import { FaArrowRightLong } from 'react-icons/fa6'
 
 
 export default async function Blogs() {
-    const res = await fetch("http://localhost:3000/api/get-post-data", { cache: 'no-store' });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-post-data`, { cache: 'no-store' });
     const data = await res.json();
     const blogs = data.posts;
     return (
